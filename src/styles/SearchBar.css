@@ -1,0 +1,93 @@
+/* ---- 
+SearchBar position
+---- */
+.search-bar-section {
+    width: 100%;
+    margin: 0 auto 61px;
+
+}
+
+/* ---- 
+SearchBar input
+---- */
+/* form */
+.search-bar {
+    position: relative;
+}
+
+/* input */
+.search-bar input {
+    height: 56px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    font-size: 20px;
+
+    font-family: 'Roboto', sans-serif;
+    line-height: 150%;
+    padding-left: calc(18px + 18px + 12px);
+    margin: 0 auto;
+}
+
+.search-bar input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.search-bar input:focus-visible {
+    outline: none;
+}
+
+
+/* ---- 
+Search icon near text
+---- */
+.search-bar:before {
+    content: url(../images/search-small-icon.svg);
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    width: 18px;
+    height: 18px;
+}
+
+/* ---- 
+Remove text icon inside input 
+---- */
+.search-bar img {
+    position: absolute;
+    top: 19px;
+    right: 19px;
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* visible when there is a text inside input */
+.search-bar img.active {
+    opacity: 1;
+}
+
+.search-bar img:hover {
+    scale: 1.1;
+}
+
+
+/* ---------------------- MOBILE ---------------------- */
+@media screen and (max-width: 576px) {
+
+    /* searchbar container */
+    .search-bar-section {
+        margin: 0 auto 32px;
+    }
+
+    /* searchbar input */
+    .search-bar input {
+        font-size: 16px;
+    }
+}

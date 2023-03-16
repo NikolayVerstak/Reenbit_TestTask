@@ -1,0 +1,197 @@
+/* ---- 
+Navbar general styles
+---- */
+/* navbar grid */
+.navbar {
+    width: 100%;
+    height: 68px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 54px;
+    display: grid;
+    place-items: center;
+    grid-template-areas: 'go-back . google-auth';
+    box-sizing: border-box;
+}
+
+.navbar * {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Karla', sans-serif;
+}
+
+/* ---- 
+Button to return to Characters list page
+---- */
+.go-back {
+    grid-area: go-back;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-right: auto;
+}
+
+/* arrow left */
+.go-back img {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    transition: .3s;
+}
+
+.go-back:hover img {
+    transform: translateX(-8px);
+}
+
+/* ---- 
+Google auth buttons
+---- */
+/* buttons container */
+.google-auth {
+    grid-area: google-auth;
+    place-self: center end;
+    position: relative;
+}
+
+/* all buttons */
+.google-auth button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- 
+Sign in button 
+---- */
+.sign-in-btn {
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* google icon */
+.sign-in-btn img {
+    width: 22px;
+    height: 22px;
+    margin-right: 4px;
+}
+
+/* ---- 
+Button with user's initials
+---- */
+.user {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgb(233, 233, 233);
+    padding: 0;
+}
+
+/* sign in button and button with user's initials */
+.google-auth :is(.sign-in-btn, .user) {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    box-shadow: var(--card-shadow);
+    box-sizing: border-box;
+}
+
+:is(.sign-in-btn, .user):hover {
+    background-color: rgb(225, 225, 225);
+}
+
+/* ---- 
+Sign out dropdown
+---- */
+/* outside container */
+.dropdown-wrapper {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: -4px;
+    height: max-content;
+    width: auto;
+    max-width: max-content;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dropdown-wrapper:has(.sign-out-dropdown.show) {
+    opacity: 1;
+}
+
+/* content container */
+.sign-out-dropdown {
+    opacity: 0;
+    width: max-content;
+    position: relative;
+    top: 0;
+    right: -100%;
+
+    box-sizing: border-box;
+    padding: 12px 8px 8px 8px;
+    background-color: rgb(233, 233, 233);
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    box-shadow: var(--card-shadow);
+    cursor: default;
+    margin: 4px;
+}
+
+/* animation: content container goes from rigth to left */
+.sign-out-dropdown.show {
+    right: 0;
+    opacity: 1;
+}
+
+/* user's name and surname */
+.sign-out-dropdown p {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: capitalize;
+}
+
+/* user's gmail */
+.sign-out-dropdown p:nth-child(2) {
+    text-transform: lowercase;
+    border-bottom: 1px solid grey;
+}
+
+/* sign out button */
+.sign-out-btn {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: capitalize;
+    padding: 0;
+    border: none;
+    color: #FF5850;
+    background: transparent;
+}
+
+.sign-out-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+
+/* ---------------------- MOBILE ---------------------- */
+@media screen and (max-width: 576px) {
+
+    /*  navbar general styles */
+    .navbar {
+        height: 68px;
+        padding: 0 28px;
+    }
+}

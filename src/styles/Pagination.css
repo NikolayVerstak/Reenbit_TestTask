@@ -1,0 +1,177 @@
+/* ---- 
+Pagination grid
+---- */
+/* buttons grid */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0;
+}
+
+/* buttons container */
+.pagination-block {
+    display: grid;
+    grid-template-areas: "prev page-numbers next";
+}
+
+/* previous page button */
+.prev-button {
+    grid-area: prev;
+    width: 56px;
+    margin-right: 8px;
+}
+
+/* next page button */
+.next-button {
+    grid-area: next;
+    width: 56px;
+    margin-left: 8px;
+}
+
+/* block of button with page numbers or dots */
+.pagination-numbers {
+    grid-area: page-numbers;
+    --page-button-size: 38px;
+    width: calc(var(--pages)*var(--page-button-size));
+}
+
+/* ---- 
+Pagination containers shape and shadow
+---- */
+.pagination-numbers,
+.prev-button,
+.next-button {
+    box-shadow: var(--card-shadow);
+    border-radius: 4px;
+}
+
+.pagination-numbers span:first-child {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.pagination-numbers span:last-child {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+/* ---- 
+Pagination buttons (all)
+---- */
+/* all */
+.pagination-block button,
+.pagination-block span {
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 6px;
+    background-color: #F0F0F0;
+    border: 1px solid #D1D0D0;
+    transition: background-color .3s ease-in, color .3s ease-in;
+    cursor: pointer;
+}
+
+.pagination-block button:hover:not(.active),
+.pagination-block span:hover:not(.active) {
+    background-color: #bebebe;
+}
+
+
+/* ---- 
+Button with page numbers or dots 
+---- */
+.pagination-numbers span {
+    width: var(--page-button-size);
+    box-sizing: border-box;
+    outline: none;
+}
+
+.pagination-numbers span.active {
+    background-color: rgba(31, 29, 29, 0.7);
+    color: white;
+}
+
+/* ---- 
+Previous and next page
+---- */
+.pagination-block :is(.prev-button, .next-button) {
+    opacity: 1;
+    transition: opacity .4s ease-in;
+    font-weight: 700;
+    position: relative;
+}
+
+/* text inside previous and next page */
+.prev-button::before {
+    content: "Prev";
+}
+
+.next-button::before {
+    content: "Next";
+}
+
+:is(.prev-button, .next-button)::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* hide previous and next page */
+.pagination-block button.disabled {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+
+/* ---------------------- MOBILE ---------------------- */
+@media screen and (max-width: 576px) {
+
+    /* previous page button */
+    .prev-button {
+        width: 32px;
+        margin-right: 8px;
+    }
+
+    /* next page button */
+    .next-button {
+        width: 32px;
+        margin-left: 8px;
+    }
+
+    /* block of button with page numbers or dots */
+    .pagination-numbers {
+        --page-button-size: 32px;
+    }
+
+    /* all buttons */
+    .pagination-numbers span,
+    .prev-button,
+    .next-button {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 6px;
+    }
+
+    /* text inside is changing to arrows previous and next page */
+    :is(.prev-button, .next-button)::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+    }
+
+    .prev-button::before {
+        background-image: url(../images/arrow-prev.svg);
+    }
+
+    .next-button::before {
+        background-image: url(../images/arrow-next.svg);
+    }
+
+}

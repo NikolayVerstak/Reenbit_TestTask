@@ -1,0 +1,47 @@
+/* ---- 
+General styles for the whole app
+---- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 12px;
+    padding: 0;
+    overflow: overlay;
+
+    /* global variables */
+    --card-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2),
+        0px 3px 4px rgba(0, 0, 0, 0.12),
+        0px 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+/* ---- 
+Scrollbar styles
+---- */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #99999993;
+    border-radius: 6px;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #88888893;
+}
+
+/* ---- 
+Hide elements if a page is loading 
+---- */
+body:has(#page.loading.show) :is(.search-bar-section, .logo-section, .navbar) {
+    opacity: 0 !important;
+}

@@ -1,0 +1,82 @@
+/* ----- 
+All character's cards layout styling
+----- */
+.characters-section {
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* to center the main content vertically */
+.characters-section:after {
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/* ---- 
+Cards grid
+---- */
+.cards-grid {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--character-card-width));
+    grid-auto-rows: min-content;
+    row-gap: 24px;
+    column-gap: var(--character-card-column-gap);
+}
+
+/* ---- 
+Loading animation 
+---- */
+#fetch-characters {
+    transition: opacity .3s ease-in;
+}
+
+/* ---- 
+Characters are not found section
+---- */
+.characters-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 34px 0 20px 0;
+}
+
+/* image */
+.characters-not-found .search-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+    background-image: url(../images/search-big-icon.svg);
+    background-size: cover;
+}
+
+/* title and message */
+.characters-not-found :is(h6, p) {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+
+/* ---------------------- MOBILE ---------------------- */
+@media screen and (max-width: 576px) {
+    .cards-grid {
+        grid-template-columns: 312px;
+        row-gap: 32px;
+        column-gap: 0;
+    }
+}

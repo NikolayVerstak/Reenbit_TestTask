@@ -1,0 +1,91 @@
+/* ---- 
+Error pages position
+---- */
+.error-message,
+.page-not-found {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    display: grid;
+    place-items: center center;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+
+}
+
+/* ---- 
+Error pages content container
+---- */
+:is(.error-message, .page-not-found) div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ---- 
+Error pages redirect buttons (GO HOME)
+---- */
+:is(.page-not-found, .error-message) a {
+    font-weight: 700;
+    font-size: clamp(14px, 2.25vw, 22px);
+    line-height: clamp(18px, 2.75vw, 26px);
+    border: none;
+    box-shadow: var(--card-shadow);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 16px;
+    background-color: rgb(240, 240, 240);
+    text-decoration: none;
+    color: black
+}
+
+:is(.page-not-found, .error-message) a:hover {
+    background-color: rgb(225, 225, 225);
+}
+
+
+/* ---- 
+Server-side error
+---- */
+/* image */
+.error-message img {
+    width: clamp(150px, 25vw, 200px);
+}
+
+/* title */
+.error-message h2 {
+    font-size: clamp(20px, 3.6vw, 24px);
+}
+
+/* message */
+.error-message div p {
+    margin: 0;
+    margin-bottom: 8px;
+    margin-top: 16px;
+    line-height: 24px;
+}
+
+/* second line of message */
+.error-message div p:last-child {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+
+/* ---- 
+Client-side error
+---- */
+/* image */
+.page-not-found img {
+    width: clamp(300px, 66vw, 650px);
+}

@@ -1,0 +1,57 @@
+/* ---- 
+Cards list general styles
+---- */
+.characters-list {
+    max-width: 1020px;
+    display: flex;
+    flex-direction: column;
+    margin: 68px auto 40px;
+    --character-card-width: 240px;
+    --character-card-column-gap: 20px;
+    position: relative;
+}
+
+/* ---- 
+Logo
+---- */
+.logo-section {
+    margin: 18px auto 16px;
+}
+
+.logo-section img {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* make for 3 columns of characters' cards */
+@media screen and (max-width: 1130px) {
+    .characters-list {
+        width: calc(var(--character-card-width)*3 + var(--character-card-column-gap)*2);
+    }
+}
+
+/* make for 2 columns of characters' cards */
+@media screen and (max-width: 870px) {
+    .characters-list {
+        width: calc(var(--character-card-width)*2 + var(--character-card-column-gap)*1);
+    }
+}
+
+
+/* ---------------------- MOBILE ---------------------- */
+/* make for 1 column of characters' cards */
+@media screen and (max-width: 576px) {
+    .characters-list {
+        width: 312px;
+    }
+
+    /* Logo */
+    .logo-section {
+        margin: 24px auto 32px;
+    }
+
+    .logo-section img {
+        width: 312px;
+        height: 104px;
+    }
+}

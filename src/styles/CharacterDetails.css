@@ -1,0 +1,161 @@
+/* ---- 
+Character page position
+---- */
+.character-page {
+    width: 413px;
+    margin: 71px auto 40px;
+    cursor: default;
+}
+
+/* ---- 
+Character details general styles
+---- */
+.character-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-details * {
+    padding: 0;
+    margin: 0;
+}
+
+/* ---- 
+Character Avatar
+---- */
+.character-avatar {
+    --diametr: 300px;
+    --border-width: 5px;
+    width: calc(var(--diametr) + 2 * var(--border-width));
+    height: calc(var(--diametr) + 2 * var(--border-width));
+}
+
+.character-avatar img {
+    width: var(--diametr);
+    height: var(--diametr);
+    border: var(--border-width) solid #F2F2F7;
+    border-radius: calc(var(--diametr)/2);
+}
+
+/* ---- 
+Character Name
+---- */
+.character-name {
+    margin-top: 11px;
+
+}
+
+.character-name h4 {
+    font-weight: 400;
+    /* font-size: 48px;
+    line-height: 56px; */
+    font-size: 38px;
+    line-height: 50px;
+    height: 50px;
+    color: #081F32;
+    text-align: center;
+    margin: 0;
+    width: max-content;
+}
+
+/* ---- 
+Character Information
+---- */
+.character-description {
+    width: 100%;
+}
+
+/* title */
+.character-description h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    text-align: center;
+    color: #8E8E93;
+    margin: 48px 0;
+}
+
+/* data block */
+.character-info-line {
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+    padding: 8px 0 11px;
+}
+
+/* line title */
+.character-info-line h6 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #081F32;
+}
+
+/* line data */
+.character-info-line p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #6E798C;
+}
+
+
+/* ---------------------- MOBILE ---------------------- */
+@media screen and (max-width: 576px) {
+
+    /* сharacter page position */
+    .character-page {
+        width: 300px;
+        margin-top: 119px;
+    }
+
+    /* сharacter avatar */
+    .character-avatar {
+        --diametr: 150px;
+    }
+
+    /*  character avatar */
+    .character-avatar img {
+        height: 148px;
+    }
+
+    /* character name */
+    .character-name {
+        margin-top: 29px;
+    }
+
+    /* .character-name h4 {
+        font-size: 32px;
+        line-height: 38px;
+    } */
+
+    .character-name h4 {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 500;
+    }
+
+    /* character Information */
+    /* title */
+    .character-description h5 {
+        margin: 34px 0 16px;
+    }
+}
+
+/* make 2 lines of character's name if it's long */
+@media screen and (max-width: 650px) {
+    .character-name h4 {
+        height: auto;
+        width: inherit;
+        word-wrap: break-word;
+    }
+}
